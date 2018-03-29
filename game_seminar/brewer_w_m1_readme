@@ -1,0 +1,44 @@
+Will Brewer
+wbrewer6@gatech.edu
+
+-- Questions --
+---------------
+1. The motion looks odd since the standard_run starts with the left foot forward,
+   and the bogus turn starts with the right foot forward. This could be fixed by
+   making sure the two animations start with the same foot forward.
+2. You could use Inverse Kinematics on the animation and explicitly place each
+   foot on the next stair, ensuring that the animation ends with the player 
+   "stepping". This would create a realistic animation where the player actually
+   steps on each stair, instead of the ramp approach most games take.
+3. At the beginning of the animation when the player falls, perform a 
+   Physics.Raycast to find how far the ground is away from the player. This 
+   could be used to blend between a falling and landing animation the closer
+   the player is to the ground.
+   Then, pass the current speed of the object to the animator and use that data to blend  
+   between different "falling" animations for the potential speeds. For example, there 
+   could be a light falling animation where you only fall a few feet and a high 
+   falling animation where you're falling from a great distance. The speed variable
+   could be used to blend between these two animations.
+
+-- Requirements --
+------------------
+All requirements complete. No known bugs.
+1. SomeDude_NoRootMotion no longer sends rotation to animator
+2. SomeDude_RootMotion running animations added, and blend tree modified
+3. SomeDude_RootMotion public scalars added to allow adjustment of animation speed
+   and root motion scale.
+4. Minion_RootMotion added a "flipping" animation to the minion forward, forward
+   turn left, and forward turn right.
+5. Minion_RootMotion added minion squeaky sound event to the forward animation
+
+-- Resources --
+---------------
+No outside resources used
+
+-- Instructions --
+------------------
+Unzip directory and run inside editor.
+
+-- Scene to Use --
+------------------
+All the edits I made were to the original demo scene
