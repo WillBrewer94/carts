@@ -384,7 +384,7 @@ function move_actor(pl)
 	else -- hit wall
 	 -- search for contact point
 	 while (not solid(pl.x + sgn(pl.dx)*0.3, pl.y-0.5)) do
-	  pl.x = pl.x + sgn(pl.dx) * 0.6
+	  pl.x = pl.x + sgn(pl.dx) * 0.1
 	 end
 	end
 	
